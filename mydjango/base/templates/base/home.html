@@ -1,9 +1,15 @@
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'base/home.css' %}"/>
+{% endblock style %}
 
 {% block content %}
-<h1>Home</h1>
-<a href="{% url "market" %}">Market</a>
-<h1>{{ special_header }}</h1>
+<div class="home">
+    <h1>Home</h1>
+    <a href="{% url "market" %}">Market</a>
+    <h1>{{ special_header }}</h1>
+</div>
 {% endblock content %}

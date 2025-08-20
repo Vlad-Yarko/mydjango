@@ -79,6 +79,17 @@ WSGI_APPLICATION = 'mydjango.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': f'django.db.backends.{settings.DRIVER}',
+        'NAME': settings.NAME,       # your database name
+        'USER': settings.USER,           # your postgres username
+        'PASSWORD': settings.PASSWORD,   # your postgres password
+        'HOST': settings.HOST,        # usually localhost
+        'PORT': settings.PORT,             # default postgres port
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -114,7 +125,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

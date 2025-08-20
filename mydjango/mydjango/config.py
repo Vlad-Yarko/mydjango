@@ -7,7 +7,12 @@ load_dotenv(find_dotenv())
 
 class Settings(BaseSettings):
     SECRET_KEY: str
-    DB: str
+    DRIVER: str
+    NAME: str
+    USER: str
+    PASSWORD: str
+    HOST: str
+    PORT: str
     
     model_config = SettingsConfigDict(env_file='.env')
 

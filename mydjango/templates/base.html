@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
     <title>{% block title %}My Site{% endblock %}</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    {% endblock style %}
 </head>
 <body>
     {% include 'navbar.html' %}
