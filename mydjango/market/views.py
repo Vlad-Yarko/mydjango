@@ -1,6 +1,6 @@
-from django.http import HttpResponse
-from django.http.request import HttpRequest
+from django.shortcuts import render
+from django.http import HttpRequest
 
 
-def home(request: HttpRequest):
-    return HttpResponse("Home page")
+def market_home(request: HttpRequest):
+    return render(request, "market/market.html")

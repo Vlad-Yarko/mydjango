@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Home</h1>
+<a href="{% url "market" %}">Market</a>
+<h1>{{ special_header }}</h1>
+{% endblock content %}
