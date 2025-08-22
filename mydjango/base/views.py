@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpRequest
+from django.views import View
 
 
 def home(request: HttpRequest):
@@ -25,3 +26,8 @@ def query(request: HttpRequest):
         return render(request, "base/query.html", context)
     else:
         print("POST")
+        
+        
+class PukView(View):
+    def get(self, request: HttpRequest):
+        return render(request, "base/puk.html")
